@@ -7,4 +7,4 @@ Feature: Validate the static elements on mine.html
     Scenario: Check home page title is correct
         Given I am logged in
         When I go to the root page
-        Then I see the title "Achtung Minen"
+        Then I see title Achtung Minen

@@ -1,17 +1,18 @@
 from behave import given, when, then
+
 from nose.tools import assert_equal
 
 
 @given('I am logged in')
-def step(context):
-    context.browser.get('http://127.0.0.1:5000')
-
-
-@when('I go to the root page')
-def step(context):
+def step_logged_in(context):
     pass
 
 
-@then('I see the title "Achtung Minen"')
-def step(context):
-    assert_equal(context.browser.title, "Achtung Minen")
+@when('I go to the root page')
+def step_go_to_root(context):
+   context.browser.get('http://localhost:5000/')
+
+
+@then('I see title {title}')
+def step_check_title(context, title):
+    assert_equal(context.browser.title, title)
