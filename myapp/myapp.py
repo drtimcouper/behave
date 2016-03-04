@@ -1,12 +1,17 @@
+import logging
+
 from flask import Flask, render_template
 
-app = Flask(__name__)
+logger = logging.getLogger()
 
+app = Flask(__name__)
+user = 'Fred'
 
 @app.route("/")
 def mine():
-    return render_template('mine.html')
+    return render_template('mine.html', user=user)
 
 
 if __name__ == "__main__":
-   app.run()
+    logging.basicConfig()
+    app.run()
